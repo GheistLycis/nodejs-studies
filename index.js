@@ -20,7 +20,21 @@ app.get("/", (req, res)=>{
 })
 app.get("/posts", (req, res)=>{
     res.render("posts", {
-        title: "Basic Project: Posts"
+        title: "Basic Project: Posts", 
+        posts: [
+            {
+                title: "Post 1",
+                text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione quia nostrum possimus aliquam earum id facere voluptates eaque, consectetur quae cupiditate perspiciatis porro est non maiores! Nemo ducimus quas culpa?"
+            },
+            {
+                title: "Post 2",
+                text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione quia nostrum possimus aliquam earum id facere voluptates eaque, consectetur quae cupiditate perspiciatis porro est non maiores! Nemo ducimus quas culpa?"
+            },
+            {
+                title: "Post 3",
+                text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione quia nostrum possimus aliquam earum id facere voluptates eaque, consectetur quae cupiditate perspiciatis porro est non maiores! Nemo ducimus quas culpa?"
+            }
+        ]
     })
 })
 app.use((req, res)=>{

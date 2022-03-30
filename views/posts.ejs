@@ -6,7 +6,17 @@
 <body>
     <section class="container">
         <%- include("partials/navbar.ejs") %>
-        <h1>POSTS!</h1>
+
+        <h1>POSTS:</h1>
+        <div class="posts">
+            <% posts.forEach((item)=>{ %>
+                <div class="post">
+                    <h3><%= item.title %> </h3>
+                    <p><%= item.text %> </p>
+                </div>                
+            <% }) %>
+        </div>
+
     </section>
     <%- include("partials/footer.ejs") %> 
 </body>
