@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head.ejs") %> 
+</head>
+<body>
+    <header>
+        <%- include("partials/header.ejs") %>
+    </header>
+
+    <section class="container">
+        <nav class="navbar">
+            <%- include("partials/navbar.ejs") %>
+        </nav>
+
+        <article class="content">
+            <h1> Welcome! </h1>
+            <p>
+                Article text example.
+            </p>
+            <p>
+                Article text example.
+            </p>
+            <p>
+                Article text example.
+            </p>
+        </article>
+    </section>
+
+    <footer class="footer">
+        <%- include("partials/footer.ejs") %> 
+    </footer>
+
+    <!-- //-EJS is seeing the folders so we don't have to point them out, just the folders/files within it -->
+    <%- include("partials/foot.ejs") %>
+</body>
+</html>
