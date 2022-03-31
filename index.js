@@ -44,9 +44,16 @@ app.get("/", (req, res)=>{
 })
 app.get("/posts", (req, res)=>{
     res.render("posts", 
+    {
+        title: "Basic Project: Posts",
+        posts: dataBase[0]
+    }
+    )
+})
+app.get("/posts-creation", (req, res)=>{
+    res.render("posts-creation", 
         {
-            title: "Basic Project: Posts",
-            posts: dataBase[0]
+            title: "Basic Project: Posts Creation"
         }
     )
 })

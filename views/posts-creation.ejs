@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head.ejs") %> 
+</head>
+<body>
+    <section class="container">
+        <%- include("partials/navbar.ejs") %>
+        <article class="content">
+            <h1>POSTS CREATION:</h1>
+            <form>
+                <div>
+                    <label>Post's Title</label>
+                    <input name="title" type="text" placeholder="Type title">
+                </div>
+                <div>
+                    <textarea name="text">Type text</textarea>
+                </div>
+                <div>
+                    <button type="submit">Register</button>
+                </div>
+            </form>
+        </article>
+    </section>
+    <footer class="footer">
+        <%- include("partials/footer.ejs") %> 
+    </footer>
+</body>
+</html>

@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <%- include("partials/head.ejs") %> 
-</head>
+<%- include("partials/head.ejs") %> 
 <body>
     <section class="container">
-        <nav class="navbar">
-            <%- include("partials/navbar.ejs") %>
-        </nav>
-        <div class="content"> <!-- CSS'S BOX NOT INCLUDING ALL CONTENT -->
+        <%- include("partials/navbar.ejs") %>
+        <article class="content"> <!-- CSS'S BOX NOT INCLUDING ALL CONTENT -->
             <h1>POSTS:</h1>
             <% posts.forEach(item=>{ %>
                 <div>
@@ -22,10 +18,8 @@
                     <br>
                 </div>                
             <% }) %>
-        </div>
+        </article>
     </section>
-    <footer class="footer">
-        <%- include("partials/footer.ejs") %> 
-    </footer>
+    <%- include("partials/footer.ejs") %> 
 </body>
 </html>
