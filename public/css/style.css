@@ -14,16 +14,6 @@ h1, h2, h3, h4, p {
   margin-bottom: 15px;
 }
 
-.header {
-  background-size: cover;
-  color: white;
-  text-align: center;
-  padding: 50px 0;
-  font-size: 40px;
-  box-shadow: 0 0 10px black;
-  margin-bottom: 10px;
-}
-
 .container {
   display: flex;
 }
@@ -74,7 +64,10 @@ h1, h2, h3, h4, p {
   padding: 20px 0;
 }
 
-.img {
-  max-height: 150px;
-  max-width: 200px;
+.home_img {
+  height: 192px;
+  width: 288px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

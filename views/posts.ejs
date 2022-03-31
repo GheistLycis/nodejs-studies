@@ -5,10 +5,11 @@
 </head>
 <body>
     <section class="container">
-        <%- include("partials/navbar.ejs") %>
-
+        <nav class="navbar">
+            <%- include("partials/navbar.ejs") %>
+        </nav>
         <h1>POSTS:</h1>
-        <div class="posts">
+        <div class="content">
             <% posts.forEach((item)=>{ %>
                 <div class="post">
                     <h3><%= item.title %> </h3>
@@ -16,8 +17,9 @@
                 </div>                
             <% }) %>
         </div>
-
     </section>
-    <%- include("partials/footer.ejs") %> 
+    <footer class="footer">
+        <%- include("partials/footer.ejs") %> 
+    </footer>
 </body>
 </html>
