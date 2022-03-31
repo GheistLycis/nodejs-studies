@@ -33,6 +33,8 @@ const dataBase =
 //app.use(express.static(path.join(__dirname, "views")))
 //DEFINING PUBLIC FOLDER
 app.use(express.static(path.join(__dirname, "public")))
+//ENABLING SERVER TO RECEIVE DATA VIA POST METHOD
+app.use(express.urlencoded({extended: true}))
 
 
 //ROUTES
@@ -50,12 +52,15 @@ app.get("/posts", (req, res)=>{
     }
     )
 })
-app.get("/posts-creation", (req, res)=>{
-    res.render("posts-creation", 
+app.get("/create-post", (req, res)=>{
+    res.render("create-post", 
         {
             title: "Basic Project: Posts Creation"
         }
     )
+})
+app.post("/save-post", (req, res)=>{
+    res.send("Working")
 })
 app.use((req, res)=>{
     res.send("Page not found... =/")

@@ -8,7 +8,7 @@
         <%- include("partials/navbar.ejs") %>
         <article class="content">
             <h1>POSTS CREATION:</h1>
-            <form>
+            <form action="/save-post" method="post">
                 <div>
                     <label>Post's Title</label>
                     <input name="title" type="text" placeholder="Type title">
