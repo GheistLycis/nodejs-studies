@@ -8,13 +8,13 @@
         <nav class="navbar">
             <%- include("partials/navbar.ejs") %>
         </nav>
-        <div class="content">
+        <div class="content"> <!-- CSS'S BOX NOT INCLUDING ALL CONTENT -->
             <h1>POSTS:</h1>
             <% posts.forEach(item=>{ %>
-                <div class="post">
+                <div>
                     <% if (item.stars){ %>
                         <% for(let i = 0; i < item.stars; i++){ %>
-                            <img src="images/star.pgn"> <!-- CAN'T LOAD IMG-->
+                            <img src="images/star.pgn"> <!-- CAN'T LOAD IMG -->
                         <% } %> 
                     <% } %>
                     <h3><%= item.title %></h3>
