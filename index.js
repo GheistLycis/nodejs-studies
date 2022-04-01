@@ -1,15 +1,16 @@
 //IMPORTING
 const express = require("express")
-const app = express()
 const path = require("path")
+const fs = require("fs")
 //-EJS USES "VIEWS" AS A DEFAULT NAME FOR STATIC FOLDER, NOT "VIEW"! FOR HELL SAKE...
+const app = express()
 app.set("view engine", "ejs")
 
 
 //IMPORTING DATABASE
 const dataBase =
-[
-    [
+{
+    posts: [
         {
             title: "Post 1",
             text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione quia nostrum possimus aliquam earum id facere voluptates eaque, consectetur quae cupiditate perspiciatis porro est non maiores! Nemo ducimus quas culpa?",
@@ -25,8 +26,8 @@ const dataBase =
             stars: 5
         }
     ],
-    ads = {}
-]
+    ads: {}
+}
 
 
 //DEFINING STATIC FOLDER IF WITHOUT VIEW ENGINE
@@ -48,7 +49,7 @@ app.get("/posts", (req, res)=>{
     res.render("posts", 
     {
         title: "Basic Project: Posts",
-        posts: dataBase[0]
+        posts: dataBase.posts
     }
     )
 })
@@ -60,6 +61,11 @@ app.get("/create-post", (req, res)=>{
     )
 })
 app.post("/save-post", (req, res)=>{
+    const {title, text} = req.body
+    const posts = JSON.parse(fs.readFileSync("./store/posts.json"))
+    posts.push({title, text})
+    fs.writeFileSync("./store/posts.json", JSON.stringify(posts))
+
     res.send("Working")
 })
 app.use((req, res)=>{
@@ -69,5 +75,5 @@ app.use((req, res)=>{
 
 //SERVER
 const port = process.env.PORT || 8080
-//-Express let us create the listen() callback without having to use res.end() as the response
+//-Express lets us create the listen() callback without having to use res.end() as the response
 app.listen(port, (req, res)=>{console.log(`Server on! Port: ${port}`)})
