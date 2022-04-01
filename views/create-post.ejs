@@ -7,7 +7,11 @@
     <section class="container">
         <%- include("partials/navbar.ejs") %>
         <article class="content">
-            <h1>POSTS CREATION:</h1>
+            <% if(registered){ %>
+                <h1>POST CREATED SUCCESSFULLY!</h1>
+                <br>
+            <% } %>
+            <h1>Post Creation:</h1>
             <form action="/save-post" method="post">
                 <div>
                     <label>Post's Title</label>

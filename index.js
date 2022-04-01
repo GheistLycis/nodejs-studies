@@ -8,8 +8,7 @@ app.set("view engine", "ejs")
 
 
 //IMPORTING DATABASE
-const dataBase =
-{
+const dataBase = {
     posts: [
         {
             title: "Post 1",
@@ -54,9 +53,11 @@ app.get("/posts", (req, res)=>{
     )
 })
 app.get("/create-post", (req, res)=>{
+    const {r} = req.query
     res.render("create-post", 
         {
-            title: "Basic Project: Posts Creation"
+            title: "Basic Project: Posts Creation",
+            registered: r
         }
     )
 })
@@ -66,7 +67,7 @@ app.post("/save-post", (req, res)=>{
     posts.push({title, text})
     fs.writeFileSync("./store/posts.json", JSON.stringify(posts))
 
-    res.send("Working")
+    res.redirect("/create-post?r=true")
 })
 app.use((req, res)=>{
     res.send("Page not found... =/")
